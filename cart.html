@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Viewport" content="width=device-width,initial-scale=1.0 " />
+    <title>All Products-Kitchencraft</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+     
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/logo 2.jpeg" width="275px" />
+        </div>
+        <nav>
+          <ul id="MenueItems">
+            <li><a href="">Home</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Account</a></li>
+          </ul>
+        </nav>
+        <img src="images/cart .jpeg" width=" 30px" height="30px" />
+        <img
+          src="images/logo/nav bar.jpeg"
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!-- cart items details -->
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="images/COOKERS/8.jpeg" />
+              <div>
+                <p>SH904 Flame Select Hub</p>
+                <small>Price:#550k</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          <td>#550k</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="images/COOKERS/3.jpeg" />
+              <div>
+                <p>SH904 Flame Select Hub</p>
+                <small>Price:#550k</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          <td>#550k</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="images/COOKERS/2.jpeg" />
+              <div>
+                <p>SH904 Flame Select Hub</p>
+                <small>Price:#550k</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          <td>#550k</td>
+        </tr>
+      </table>
+      <!-- <div class="total-price">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td>#200k</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td>#200k</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>#200k</td> -->
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- coupon -->
+    <section id="cart-add" class="section-p1">
+      <div id="coupon">
+        <h3>Apply Coupon</h3>
+        <div>
+          <input type="text" placeholder="Enter Your Coupon">
+          <button class="normal">Apply</button>
+        </div>
+     </div>
+
+     <div id="subtotal"> 
+      <h3>Cart Totals</h3>
+      <table>
+        <tr>
+          <td>Cart Subtotal</td>
+          <td>#100,000</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td>Free</td>
+        </tr>
+        <td><strong>Total</strong></td>
+        <td><strong>#100,000</strong></td>
+      </table>
+      <button class="normal" >Proceed to checkout </button>
+
+     </div>
+
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Andriod and ios Mobile Phone</p>
+            <div class="app-logo">
+              <img src="images/logo/andriod.jpeg" />
+              <img src="images/logo/apple.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo 2.jpeg" alt="" />
+            <p>
+              Experience the art of Italian craftsmanship in your kitchen. Our
+              appliances combine timeless design, innovative technology, and
+              superior performance to bring elegance and efficiency to every
+              meal you create.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright2010-KitchenCraft</p>
+      </div>
+    </div>
+    <!-- js for toggle menu -->
+    <script>
+      var MenueItems = document.getElementById("MenueItems");
+
+      MenueItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenueItems.style.maxHeight == "0px") {
+          MenueItems.style.maxHeight = "200px";
+        } else {
+          MenueItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+  </body>
+</html>
