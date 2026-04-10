@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Viewport" content="width=device-width,initial-scale=1.0 " />
+    <title>Contact Us - Kitchencraft</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/logo 2.jpeg" width="275px" />
+        </div>
+        <nav>
+          <ul id="MenueItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart .jpeg" width=" 30px" height="30px" /></a>
+        <img
+          src="images/logo/nav bar.jpeg"
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="small-container" style="padding: 100px 0;">
+      <h2 class="title">Contact Us</h2>
+      
+      <div class="row">
+        <div class="col-2">
+          <h3>Get In Touch</h3>
+          <p style="margin: 20px 0;">
+            Have questions about our kitchen appliances? We'd love to hear from you. 
+            Send us a message and we'll respond as soon as possible.
+          </p>
+          <h4 style="margin-top: 30px;">Contact Information</h4>
+          <p><i class="fa fa-map-marker"></i> <strong>Address:</strong> 123 Kitchen Street, Lagos, Nigeria</p>
+          <p><i class="fa fa-phone"></i> <strong>Phone:</strong> +234 (0) 123 456 7890</p>
+          <p><i class="fa fa-envelope"></i> <strong>Email:</strong> info@kitchencraft.com</p>
+          <h4 style="margin-top: 30px;">Business Hours</h4>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+
+        <div class="col-2">
+          <h3>Send us a Message</h3>
+          <form id="contact-form" style="margin-top: 30px;">
+            <div style="margin-bottom: 20px;">
+              <label for="name"><strong>Full Name</strong></label><br>
+              <input 
+                type="text" 
+                id="name"
+                name="name" 
+                placeholder="Your full name" 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"
+                required
+              />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="email"><strong>Email Address</strong></label><br>
+              <input 
+                type="email" 
+                id="email"
+                name="email" 
+                placeholder="your@email.com" 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"
+                required
+              />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="phone"><strong>Phone Number</strong></label><br>
+              <input 
+                type="tel" 
+                id="phone"
+                name="phone" 
+                placeholder="Your phone number" 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="subject"><strong>Subject</strong></label><br>
+              <input 
+                type="text" 
+                id="subject"
+                name="subject" 
+                placeholder="Subject of your message" 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"
+                required
+              />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="message"><strong>Message</strong></label><br>
+              <textarea 
+                id="message"
+                name="message" 
+                rows="6" 
+                placeholder="Your message here..." 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: Poppins;"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="cursor: pointer;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and iOS Mobile Phone</p>
+            <div class="app-logo">
+              <img src="images/logo/andriod.jpeg" />
+              <img src="images/logo/apple.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo 2.jpeg" alt="" />
+            <p>
+              Experience the art of Italian craftsmanship in your kitchen. Our
+              appliances combine timeless design, innovative technology, and
+              superior performance to bring elegance and efficiency to every
+              meal you create.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright 2010-KitchenCraft</p>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      var MenueItems = document.getElementById("MenueItems");
+      MenueItems.style.maxHeight = "0px";
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
