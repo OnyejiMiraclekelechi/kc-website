@@ -15,13 +15,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <style>
+      .search-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .search-bar input {
+        padding: 5px 12px;
+        border: 1px solid #ff523b;
+        font-family: Poppins;
+        font-size: 14px;
+        width: 200px;
+      }
+      .search-bar input:focus { outline: none; }
+      .no-results {
+        text-align: center;
+        padding: 40px;
+        color: #999;
+        display: none;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <!-- <div class="hero"> -->
       <div class="navbar">
         <div class="logo">
-          <img src="images/logo 2.jpeg" width="275px" />
+          <a href="index.html"><img src="images/logo 2.jpeg" width="275px" /></a>
         </div>
         <nav>
           <ul id="MenueItems">
@@ -32,7 +53,7 @@
             <li><a href="account.html">Account</a></li>
           </ul>
         </nav>
-        <img src="images/cart .jpeg" width=" 30px" height="30px" />
+        <a href="cart.html"><img src="images/cart .jpeg" width="30px" height="30px" /></a>
         <img
           src="images/logo/nav bar.jpeg"
           class="menu-icon"
@@ -44,172 +65,156 @@
     <div class="small-container">
       <div class="row row-2">
         <h2>All Products</h2>
-        <select onchange="filterProducts()">
-          <option>Cooker</option>
-          <option>Microwave</option>
-          <option>Oven</option>
-          <option>Extractor</option>
-          <option>Fridge</option>
-          <option>Wine Chiller</option>
-          <option>Blender</option>
-          <option>Sink</option>
-          <option>Tap</option>
-          <option>Corners</option>
-          <option>Pantrys</option>
-          <option>Accessories</option>
-          <option>Others</option>
-        </select>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="product-search"
+            placeholder="Search products..."
+            oninput="searchProducts()"
+          />
+          <select id="category-filter" onchange="filterProducts()">
+            <option value="All">All</option>
+            <option value="Cooker">Cooker</option>
+            <option value="Microwave">Microwave</option>
+            <option value="Oven">Oven</option>
+            <option value="Extractor">Extractor</option>
+            <option value="Fridge">Fridge</option>
+            <option value="Wine Chiller">Wine Chiller</option>
+            <option value="Blender">Blender</option>
+            <option value="Sink">Sink</option>
+            <option value="Tap">Tap</option>
+            <option value="Corners">Corners</option>
+            <option value="Pantrys">Pantrys</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-4">
-          <img src="images/COOKERS/2.jpeg" />
-          <h4>90cm Hob Black Glass</h4>
+
+      <div class="row" id="product-grid">
+        <div class="col-4" data-category="Cooker">
+          <a href="product details.html"><img src="images/COOKERS/2.jpeg" /></a>
+          <a href="product details.html"><h4>90cm Hob Black Glass</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>610,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/OVEN/2.jpeg" />
-          <h4>60cm Black Electric Oven</h4>
+        <div class="col-4" data-category="Oven">
+          <a href="product details.html"><img src="images/OVEN/2.jpeg" /></a>
+          <a href="product details.html"><h4>60cm Black Electric Oven</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>650,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/MICROWAVE/2.jpeg" />
-          <h4>Microwave 28L Black Full Touch Control</h4>
+        <div class="col-4" data-category="Microwave">
+          <a href="product details.html"><img src="images/MICROWAVE/2.jpeg" /></a>
+          <a href="product details.html"><h4>Microwave 28L Black Full Touch Control</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>480,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/extractor/1.jpeg" />
-          <h4>90cm Vertical Hood Black</h4>
+        <div class="col-4" data-category="Extractor">
+          <a href="product details.html"><img src="images/extractor/1.jpeg" /></a>
+          <a href="product details.html"><h4>90cm Vertical Hood Black</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>480,000</p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <img src="images/plate and pot rack/1.jpeg" />
-          <h4>plate and pot rack</h4>
+        <div class="col-4" data-category="Accessories">
+          <a href="product details.html"><img src="images/plate and pot rack/1.jpeg" /></a>
+          <a href="product details.html"><h4>Plate and Pot Rack</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>710,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/OVEN/3.jpeg" />
-          <h4>90cm Black Magic Digital Electric Oven</h4>
+        <div class="col-4" data-category="Oven">
+          <a href="product details.html"><img src="images/OVEN/3.jpeg" /></a>
+          <a href="product details.html"><h4>90cm Black Magic Digital Electric Oven</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>720,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/blender/1.jpeg" />
-          <h4>Multipurpose Blender Red</h4>
+        <div class="col-4" data-category="Blender">
+          <a href="product details.html"><img src="images/blender/1.jpeg" /></a>
+          <a href="product details.html"><h4>Multipurpose Blender Red</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>988,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/pantry/1.jpeg" />
-          <h4>Padded pantry</h4>
+        <div class="col-4" data-category="Pantrys">
+          <a href="product details.html"><img src="images/pantry/1.jpeg" /></a>
+          <a href="product details.html"><h4>Padded Pantry</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>480,000</p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <img src="images/dish washer/black.jpeg" />
-          <h4>Black Dishwasher</h4>
+        <div class="col-4" data-category="Others">
+          <a href="product details.html"><img src="images/dish washer/black.jpeg" /></a>
+          <a href="product details.html"><h4>Black Dishwasher</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>720,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/taps/3.jpeg" />
-          <h4>Kitchen Tap</h4>
+        <div class="col-4" data-category="Tap">
+          <a href="product details.html"><img src="images/taps/3.jpeg" /></a>
+          <a href="product details.html"><h4>Kitchen Tap</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>695,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/magic corner/1.jpeg" />
-          <h4>padded magic corner</h4>
+        <div class="col-4" data-category="Corners">
+          <a href="product details.html"><img src="images/magic corner/1.jpeg" /></a>
+          <a href="product details.html"><h4>Padded Magic Corner</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>390,000</p>
         </div>
-        <div class="col-4">
-          <img src="images/waste bin/1.jpeg" />
-          <h4>Black Double Wastebin</h4>
+        <div class="col-4" data-category="Others">
+          <a href="product details.html"><img src="images/waste bin/1.jpeg" /></a>
+          <a href="product details.html"><h4>Black Double Wastebin</h4></a>
           <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <i class="fa fa-star"></i><i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
           <p>480,000</p>
         </div>
+        <p class="no-results" id="no-results">No products found.</p>
       </div>
+
       <div class="page-btn">
         <span>1</span>
         <span>2</span>
@@ -225,7 +230,7 @@
         <div class="row">
           <div class="footer-col-1">
             <h3>Download Our App</h3>
-            <p>Download App for Andriod and ios Mobile Phone</p>
+            <p>Download App for Android and iOS Mobile Phone</p>
             <div class="app-logo">
               <img src="images/logo/andriod.jpeg" />
               <img src="images/logo/apple.jpeg" alt="" />
@@ -259,18 +264,28 @@
           </div>
         </div>
         <hr />
-        <p class="copyright">Copyright2010-KitchenCraft</p>
+        <p class="copyright">Copyright 2010-KitchenCraft</p>
       </div>
     </div>
-    <!-- js for toggle menu -->
+
     <script>
-      var MenueItems = document.getElementById("MenueItems");
-
-      MenueItems.style.maxHeight = "0px";
-
       var MenueItems = document.getElementById("MenueItems");
       MenueItems.style.maxHeight = "0px";
     </script>
     <script src="script.js"></script>
+    <script>
+      // Show "no results" message when all products are hidden
+      function checkNoResults() {
+        var products = document.querySelectorAll('.col-4[data-category]');
+        var visible = Array.from(products).filter(function(p) {
+          return p.style.display !== 'none';
+        });
+        document.getElementById('no-results').style.display = visible.length === 0 ? 'block' : 'none';
+      }
+      var origFilter = filterProducts;
+      filterProducts = function() { origFilter(); checkNoResults(); };
+      var origSearch = searchProducts;
+      searchProducts = function() { origSearch(); checkNoResults(); };
+    </script>
   </body>
 </html>

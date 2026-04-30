@@ -12,14 +12,16 @@ function menutoggle() {
 }
 
 // Account Form Toggle
+// LoginForm is positioned at left:-300px; translateX(300px) brings it to visible(0).
+// RegForm is positioned at left:0; translateX(300px) pushes it off-screen right.
 function register() {
     var RegForm = document.getElementById("RegForm");
     var LoginForm = document.getElementById("LoginForm");
     var Indicator = document.getElementById("Indicator");
-    
+
     if (RegForm && LoginForm && Indicator) {
         RegForm.style.transform = "translateX(0px)";
-        LoginForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(0px)";
         Indicator.style.transform = "translateX(100px)";
     }
 }
@@ -28,10 +30,10 @@ function login() {
     var RegForm = document.getElementById("RegForm");
     var LoginForm = document.getElementById("LoginForm");
     var Indicator = document.getElementById("Indicator");
-    
+
     if (RegForm && LoginForm && Indicator) {
         RegForm.style.transform = "translateX(300px)";
-        LoginForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(300px)";
         Indicator.style.transform = "translateX(0px)";
     }
 }
@@ -62,14 +64,28 @@ function addToCart(productName, price) {
     }, 500);
 }
 
-// Product Filter/Sort
+// Product Filter
 function filterProducts() {
-    var selectElement = document.querySelector('select');
-    if (selectElement) {
-        var selectedCategory = selectElement.value;
-        console.log('Selected category: ' + selectedCategory);
-        alert('Filtering by: ' + selectedCategory + '\n(Feature coming soon)');
-    }
+    var selectElement = document.getElementById('category-filter');
+    var searchInput = document.getElementById('product-search');
+    if (!selectElement) return;
+
+    var selectedCategory = selectElement.value;
+    var searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+    var products = document.querySelectorAll('.col-4[data-category]');
+
+    products.forEach(function(product) {
+        var category = product.getAttribute('data-category');
+        var name = product.querySelector('h4') ? product.querySelector('h4').textContent.toLowerCase() : '';
+        var categoryMatch = selectedCategory === 'All' || category === selectedCategory;
+        var searchMatch = name.indexOf(searchTerm) !== -1;
+        product.style.display = (categoryMatch && searchMatch) ? 'block' : 'none';
+    });
+}
+
+// Product Search
+function searchProducts() {
+    filterProducts();
 }
 
 // Coupon Apply
